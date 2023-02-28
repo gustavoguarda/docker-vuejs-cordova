@@ -42,12 +42,12 @@ RUN /opt/android-sdk-linux/cmdline-tools/tools/bin/sdkmanager "system-images;and
 
 CMD /opt/tools/entrypoint.sh built-in
 
-# Instalação do Node.js 14 e cordova
+# Install Node.js 14 and cordova
 RUN curl -sL https://deb.nodesource.com/setup_14.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g cordova@"$CORDOVA_VERSION"
 
-# Instalação do Gradle
+# Install Gradle
 RUN wget "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" && \
     unzip "gradle-$GRADLE_VERSION-bin.zip" -d /usr/local && \
     rm "gradle-$GRADLE_VERSION-bin.zip"
