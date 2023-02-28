@@ -1,16 +1,23 @@
 #!/usr/bin/env bash
 
-echo "Rodando build"
+echo "Building"
 
 npm install
-npm run build:dev
+npm run build
 
 if [ -d "cordova-app/www/" ]; then
-    echo "Existe"
+    echo "Cordova project already exists"
     cd cordova-app
     npm install
-    cp config.xml-dev config.xml
+    rm -rf platforms/ plugins/ www/*
     cp -R ../dist/* www/
     cordova platform add android@11.0.0 --no-telemetry
+    cordova build android --dev --packageType=apk --gradleArg=-PcdvCompileSdkVersion=31
+else
+    echo "Create cordova project"
+    cordova create cordova-app com.example.myapp MyApp --no-telemetry
+    cd cordova-app
+    cordova platform add android@11.0.0 --no-telemetry
+    cp -R ../dist/* www/
     cordova build android --dev --packageType=apk --gradleArg=-PcdvCompileSdkVersion=31
 fi
