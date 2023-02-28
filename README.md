@@ -1,13 +1,11 @@
 # App Vuejs with cordova 
 
-## Project setup
+## Build image
 ```
 docker build -t vuejs-cordova .
 ```
 
-### Compiles and hot-reloads for development
+### Run image
 ```
 docker run -it -v $(pwd):/app vuejs-cordova
 ```
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
