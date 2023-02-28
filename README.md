@@ -1,6 +1,6 @@
 # App Vuejs with cordova 
 
-## Build image
+### Build image
 ```
 docker build -t vuejs-cordova .
 ```
