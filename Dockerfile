@@ -54,4 +54,4 @@ RUN wget "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin
 
 WORKDIR /app
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+# ENTRYPOINT ["/app/entrypoint.sh"]
