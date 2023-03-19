@@ -7,5 +7,5 @@ docker build -t vuejs-cordova .
 
 ### Run image
 ```
-docker run -it -v $(pwd):/app vuejs-cordova
+docker run -it -v $(pwd):/app vuejs-cordova /bin/bash
 ```
